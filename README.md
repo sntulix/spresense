@@ -44,6 +44,12 @@ Install the necessary packages and GCC ARM toolchain for cross-compilation.
 ```
 $ sudo apt-get install git gperf libncurses5-dev flex bison gcc-arm-none-eabi
 ```
+
+and for ubuntu 18.04
+```
+$ sudo apt install make autotools-dev automake pkg-config
+```
+
 Install the *kconfig-frontends* package from [nuttx-tools](https://bitbucket.org/nuttx/tools.git).
 ``` bash
 $ git clone -n https://patacongo@bitbucket.org/nuttx/tools.git tools
