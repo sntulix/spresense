@@ -51,11 +51,13 @@ $ sudo apt install make autotools-dev automake pkg-config
 ```
 
 Install the *kconfig-frontends* package from [nuttx-tools](https://bitbucket.org/nuttx/tools.git).
+
 ``` bash
 $ git clone -n https://patacongo@bitbucket.org/nuttx/tools.git tools
 $ cd tools
 $ git config core.autocrlf false
 $ git checkout 891510d2534287afef6b5c90a375f94442a7e94d
+$ sed -i "s/^\(static const struct kconf_id \*kconf_id_lookup.*\);/\/\*\1;\*\//" kconfig-frontends/libs/parser/hconf.c
 $ cd kconfig-frontends/
 $ ./configure
 $ make
