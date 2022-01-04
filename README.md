@@ -45,11 +45,13 @@ Install the necessary packages and GCC ARM toolchain for cross-compilation.
 $ sudo apt-get install git gperf libncurses5-dev flex bison gcc-arm-none-eabi
 ```
 Install the *kconfig-frontends* package from [nuttx-tools](https://bitbucket.org/nuttx/tools.git).
+
 ``` bash
 $ git clone -n https://patacongo@bitbucket.org/nuttx/tools.git tools
 $ cd tools
 $ git config core.autocrlf false
 $ git checkout 891510d2534287afef6b5c90a375f94442a7e94d
+$ sed -i "s/^\(static const struct kconf_id \*kconf_id_lookup.*\);/\/\*\1;\*\//" kconfig-frontends/libs/parser/hconf.c
 $ cd kconfig-frontends/
 $ ./configure
 $ make
